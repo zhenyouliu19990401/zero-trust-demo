@@ -10,3 +10,4 @@ This repository demonstrates Zero Trust security concepts using GitHub Actions.
 1. Secure code commit
 2. Unauthorized access prevention
 3. Insider threat simulation
+4. AWS_SECRET_ACCESS_KEY = "AKIAIOSFODNN7EXAMPE“

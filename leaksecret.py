@@ -1,3 +1,6 @@
 # Fake AWS keys to test Gitleaks
 AWS_ACCESS_KEY_ID = "AKIA1234567890EXAMPLE"
 AWS_SECRET_ACCESS_KEY = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+
+
+idekiq-secret:50

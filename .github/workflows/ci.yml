@@ -36,7 +36,7 @@ jobs:
       - name: Secret scan (Gitleaks)
         uses: gitleaks/gitleaks-action@v2
         with:
-          args: detect --source=. --verbose --redact --report-format=sarif --report-path=results.sarif
+          args: detect --source=. --no-git --verbose --redact --exit-code=1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

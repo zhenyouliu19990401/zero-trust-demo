@@ -33,12 +33,14 @@ jobs:
         run: |
           pip install flake8 && flake8 .
 
-      - name: Secret scan (Gitleaks)
-        uses: gitleaks/gitleaks-action@v2
-        with: 
-          args: detect --source=. --no-git --verbose --redact --exit-code=1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run Gitleaks manually
+        run: |
+          curl -sSL https://github.com/gitleaks/gitleaks/releases/latest/download/gitleaks_Linux_x64.tar.gz -o gitleaks.tar.gz
+          mkdir gitleaks-bin
+          tar -xzf gitleaks.tar.gz -C gitleaks-bin
+          chmod +x gitleaks-bin/gitleaks
+          ./gitleaks-bin/gitleaks detect --source=. --no-git --verbose --redact --exit-code=1
+
 
       - name: Build artifact
         run: |
